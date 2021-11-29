@@ -1,0 +1,1 @@
+This is the extended Numbers class supporting index operators, insertion operators and comparison operators.

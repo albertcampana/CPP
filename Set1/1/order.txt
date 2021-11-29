@@ -1,0 +1,11 @@
+explain.txt
+
+numbers/numbers.hh
+numbers/numbers.ih
+
+numbers/idxop1.cc
+numbers/idxop2.cc
+numbers/idxop3.cc
+numbers/ostream.cc
+numbers/eqop.cc
+numbers/size.cc

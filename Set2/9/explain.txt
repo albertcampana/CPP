@@ -1,0 +1,1 @@
+We decided to add an outer while loop. Then we avoid the program from ending when the stod throws an exception. And a try block sorrounding the inner while to catch the excepction. The catch handler prints an error message.

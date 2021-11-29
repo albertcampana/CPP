@@ -1,0 +1,2 @@
+This is a little program that copies a file, maintaining the source timestamp.
+It does not use streams.

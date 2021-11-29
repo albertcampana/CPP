@@ -1,0 +1,5 @@
+1. This porgram does not work because an istream defines an explicit conversion operator to bool. This means that getline() can not be converted to a bool.
+
+2. We solve this issue by explicitly requesting an explicit conversion using a static_cast.
+
+3. We make the function return the same type as getline().
