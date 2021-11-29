@@ -1,0 +1,1 @@
+We added the three catch handlers for each of the three statements.
