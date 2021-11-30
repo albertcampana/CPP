@@ -1,0 +1,5 @@
+The issue with exit calls is that they terminate the program completely.
+On the other side, exceptions provide a means to break a funtions (and program) normal flow, without the need to terminate the program using blunt tools like the function exit.
+With exceptions you have more information about what went wrong with the program.
+
+In the out.txt file we can see how the catch handler prints the first cout but not the second since the program has been terminated with the exit(3).

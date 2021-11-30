@@ -1,0 +1,5 @@
+We created a little program with two nested try-blocks.
+We first create a string and print it's address. Then we throw it and print the address again in the catch handler, observing that the address has now changed and proving that cathcing objects result in additional copies of thrown objects. 
+At this point we added an empty throw, and printed the address again. Observing that the address remains the same. Proving that an empty throw results in throwing the currently available exception.
+
+The output of the program can be checked at the out.txt file.

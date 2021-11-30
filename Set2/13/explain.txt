@@ -1,0 +1,5 @@
+Since the catch handler must be able to free the allocated memory, we have to initialize a reference to the MaxFour object outside the try block with a non-throwing preamble. 
+If allocation fails, new throws a std::bad_alloc exception and the catch handler simply deletes 0-pointers which is OK.
+If allocation succeeds but the construction of some of the objects fails by throowing and exception then the following will happen:
+- The destructors of all successfully allocated objects are called;
+- The dynamically allocated memory to contain the objects is returned;
