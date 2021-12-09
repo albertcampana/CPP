@@ -1,5 +1,9 @@
-We created a little program with two nested try-blocks.
-We first create a string and print it's address. Then we throw it and print the address again in the catch handler, observing that the address has now changed and proving that cathcing objects result in additional copies of thrown objects. 
-At this point we added an empty throw, and printed the address again. Observing that the address remains the same. Proving that an empty throw results in throwing the currently available exception.
+We created a little program with four nested try-blocks.
+First we initialize our new object, a string.
+Inside the inner try-block we print the address of the object and we throw it. Then we catach the object in the catch-handler and print it's address. Here we can prove that the addresses are different and therefore a copy of the object has been created.
+In the following inner try-block, we make an emty throw and print the address of the object catched in the catch-handler. Here we can prove that the address is the same as the copy. We prove that an empty throw sends the same exception that has received.
+Next, we make another empty throw, but now we catch the exception by reference and we print the address. We can see a totally different address since this one is now the address referencing the copy.
+Finally in the outer try-block, we catch the object again, and print it's address. Now we can see that no more than one copy of the object has been created. If we keep throwing the exception we will always get the same address.
+
 
 The output of the program can be checked at the out.txt file.

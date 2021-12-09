@@ -1,3 +1,2 @@
-Set: Set 1
+Set: Set 3
 Authors: Albert Campaña, David Vives, Cynthia Snijder.
-Rater: RC

@@ -14,14 +14,13 @@ int main(int argc, char **argv)
     {
         if (usage_ex)                  // check if usage_ex equals 0
             return 1;
-        else                           // otherwise
-            return 0;
+        return 0;
     }
     catch (string const &ex)           // string exeption handler
     {
         cout << ex;
     }
-    catch (exception &ex)              // std::exception exeption handler
+    catch (exception const &ex)              // std::exception exeption handler
     {
         cout << ex.what();
     }

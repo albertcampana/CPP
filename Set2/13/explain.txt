@@ -1,5 +1,8 @@
-Since the catch handler must be able to free the allocated memory, we have to initialize a reference to the MaxFour object outside the try block with a non-throwing preamble. 
-If allocation fails, new throws a std::bad_alloc exception and the catch handler simply deletes 0-pointers which is OK.
-If allocation succeeds but the construction of some of the objects fails by throowing and exception then the following will happen:
-- The destructors of all successfully allocated objects are called;
-- The dynamically allocated memory to contain the objects is returned;
+Since the catch handler must be able to free the incomplete array allocation, we have to initialize a reference to the MaxFour object outside the try block with a non-throwing preamble. 
+
+In the out.txt file we can see how 4 objects of the MaxFour class are created and then the program tries to create the 5th object (number 4) and then throws the exception. 
+The delete[] just deletes the first 4 objects.
+
+The solution is so simple because of the array implementation in C++;
+When you allocate memory on the heap, your allocator will keep track of how much memory you have allocated.
+This is stored in a "head" segment just before the memory that you get allocated. That way when it's time to free the memory, the de-allocator knows exactly how much memory to free.

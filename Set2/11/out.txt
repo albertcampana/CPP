@@ -1,3 +1,5 @@
-Initial Object: Exception address: 0x7fff375075d0
-caught: Exception address: 0xebcf40
-caught [empty throw]: Exception address: 0xebcf40
+Initial Object-> Exception address: 0x7fff398d2390
+Caught-> Exception address: 0x7fff398d2390
+Caught [empty throw]-> Exception address: 0x7fff398d2390
+Caught by reference-> Exception address: 0x1f05f40
+Caught original object-> Exception address: 0x7fff398d2390

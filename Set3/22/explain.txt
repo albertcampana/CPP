@@ -1,0 +1,7 @@
+You can call Derived::hello by making the hello() function virtual.
+When you make a function virtual in a Base calss, it will remain virtual for all it's derived classes. So if you have a big herarchy, it's difficult to know which class is overriding it.
+
+This is bad practice because it generates extra coupling between classes. The code gets less readable and harder to maintain.
+
+In our example, it is also bad because we need the virtual function to be public, which makes the class interface inconsisten between all derived classes. It should be either protected or private.
+

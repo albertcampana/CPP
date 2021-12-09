@@ -1,0 +1,6 @@
+#include <iostream>
+#include "base.hh"
+#include "derived.hh"
+#include "caller.hh"
+
+using namespace std;

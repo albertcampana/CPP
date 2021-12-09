@@ -1,0 +1,7 @@
+//OUT 1//
+Base default constructor 
+Derived default constructor 
+Base default constructor 
+Derived copy constructor 
+Base default constructor 
+Derived move constructor 

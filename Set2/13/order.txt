@@ -5,3 +5,5 @@ main.cc
 maxfour.ih
 maxfour.hh
 maxfour.cc
+
+out.txt

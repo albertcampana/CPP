@@ -1,0 +1,11 @@
+This happens because since the derived class is inheriting the base class, you'll have to first create the base class in order to inherit, and then construct the derived class. 
+Also this is useful because if it fails constructing the Derived class, then the base class object destructor is called, avoiding memory leaks.
+To destruct an object you can either call the destructor directlly, or by letting the object out of scope.
+When we destruct the derived class, the base class destructor will only be called once this is out of scope. That won't happen until the derived class is destructed. That's why first the derived class is destructed, and then (because is out of scope) the base class destructor is called.
+
+The example provided (main.cc) just initialises a Derived object;
+To do so, it first calls the Base constructor, followed by the Derived constructor. 
+When it ends, it calls the Derived destructor first, followed by the Base destructor.
+This happens because of what we explained earlier. If run the other way, calling the derive constructor first, this would fail because it expects a base class object to inherit it's methods from.
+
+You never need to explicitly call the destructor except when using placement new, then the user is in charge of destructing such object. The reason why we only need to call the Derived destructor and not also the Base destructor, is because once the Derived object is destructed, the base object will be out of scope and will automatically call it's destructor.

@@ -11,8 +11,9 @@ int main()
     }
     catch (...)
     {
-        delete[] mf;                   // Delete the array of objects
+        delete[] mf;                   // Delete the incomplete 
+                                       // array allocation
                                        // Print error message
-        cerr << "max. number of objects reached";
+        cout << "max. number of objects reached" << "\n";
     }
 }

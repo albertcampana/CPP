@@ -4,11 +4,12 @@ int main()
 {
     try
     {
-        throw "Error explanation\n";   // Throw an exception
+        string msg = "Error explanation";
+        throw msg;                     // Throw an exception
     }
-    catch (char const *exception)
+    catch (string const exception)
     {
-        cout << exception;             // Print the exception
+        cout << exception << "\n";     // Print the exception
         exit(3);                       // Terminate program
         cout << "Won't be printed.\n";
     }

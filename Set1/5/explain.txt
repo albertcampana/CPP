@@ -1,6 +1,6 @@
 1. First::fun is called because of Koenig principle.
 We can call Second::fun by explicitly specifying the Second namespace in main() like so:
-Second::fun(First::Symbol symbol);
+Second::fun(First::Enum{});
 
 2. Because of the Koenig lookup, as you are using the std::cout as an argument, the compiler already knows that you want to use the std::operator<<. 
 
