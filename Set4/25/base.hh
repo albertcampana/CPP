@@ -1,7 +1,13 @@
 class Base
 {
     private:
-        virtual void vHello(ostream &out);
+        virtual void vHello(std::ostream &out)
+        {
+            out << "Hello from Base\n";
+        }
     public:
-        void hello(ostream &out);
+        void hello(std::ostream &out)
+        {
+            vHello(out);
+        }
 };

@@ -1,10 +1,15 @@
 class Message
 {
-    Base d_base;
-
-    private:
-        Message(Base &base);
+    Base *d_base;
     
     public:
-        show();
-}
+        Message(Base &base)
+        {
+            d_base = &base;
+        }
+
+        void show()
+        {
+            d_base->hello(std::cout);
+        }
+};

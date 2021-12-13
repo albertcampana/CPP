@@ -1,10 +1,16 @@
-class Derived
+class Derived : public Base
 {
-    string d_text;
+    std::string d_text;
 
-    private:
-        Derived(String text)
-        
+    private:       
+        void vHello(std::ostream &out) override
+        {
+            out << d_text << '\n';
+        } 
+
     public:
-        void vHello() override;
+        Derived(std::string text)
+        {
+            d_text = text;
+        }
 };

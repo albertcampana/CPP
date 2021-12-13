@@ -1,13 +1,14 @@
 #include "main.ih"
 
-main()
+int main()
 {
-    Base base = Base();
-    Derived derived = Derived("derived");  
-    Message messageBase = Message(base);
-    Message messageDerived = Message(derived);
+    Base base = Base();                        // Initialize Base object
+    Derived derived = Derived("Derived");      // Initialize Derived object
 
-    messageBase.show();
+    Message messageBase = Message(base);       // Create Message using base
+    Message messageDerived = Message(derived); // Create Message using derived
 
-    messageDerived.show();
+    messageBase.show();                        // Should print Base vHello
+
+    messageDerived.show();                     // Should print Derived vHello
 }

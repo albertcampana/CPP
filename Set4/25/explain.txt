@@ -1,5 +1,6 @@
-PUBLIC: When publicly inheriting from an existring Base class, all the access rights remains unaltered. Which means that all the members that were previously accessible, still remain the same. The designer will be able to use either public or protected members, but the users of the Derived objects will only be able to access public members and not protected ones.
-
-PROTECTED: When we use protected inheritance, all public and protected members from the base class are seen as protected from the derived class point of view. Which means that only Derived's designer will be able to access these members. Users of the Derived class won't be able to access any members from the Base class.
-
-PRIVATE: It's members can only be accessed by members of the class itslef. A base class does not have access to a base class's private section. Which means that neither the Derived's designer nor users of a Derived object will have access to the members of the Base class.
+ Just one Vtable is created for each class that has virtual methods and it is shared by all objects of that class. Having each one Vpointer to the corresponding Vtable.
+ 
+ This program defines two Vtables, one for Base and one for Derived and two Vpointer one for base and one for derived objects. 
+ 
+ The message object created using the derived object uses the derived Vtable even though it has a base poiter. This is possible because of polymorphism.
+ 
