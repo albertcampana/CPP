@@ -5,7 +5,7 @@ main.cc
 base.hh
 base.cc
 derived.hh
-derived.cc
+derived.txt
 
 out1.txt
 out2.txt

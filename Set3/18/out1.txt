@@ -1,7 +1,5 @@
-//OUT 1//
+// OUT1.TXT //
+
 Base default constructor 
-Derived default constructor 
-Base default constructor 
-Derived copy constructor 
-Base default constructor 
-Derived move constructor 
+Base copy constructor 
+Base move constructor 

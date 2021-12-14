@@ -2,5 +2,5 @@ class Base
 {
     public:
         Base();
-        virtual void hello();
+        void hello();
 };

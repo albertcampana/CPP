@@ -1,8 +1,12 @@
-First, when calling each derived constructor, since there is no member initialization, the default base constructor is always called.
+In this question we are asked to design a simple class Base with the default copy and move constructors and also for the Derived class. Then, we are asked to study different calls to constructors.
+
+When calling each derived constructor, the matching Base constructor is called, because C++ compiler by default creates implicit constructors for a class, if no constructor is declared. As seen in the out1.txt
+
+If we write the three Derived constructors ourselves without specifying which base constructor to use (as seen in derived.txt), the default base constructor is called. As we can see in the out2.txt file.
 
 Then, we add the matching base constructor call to each derived constructor. As seen in the out2.txt file, now the correct order of constructors is being called.
 
 To answer the last question; The type of calling std::move with a T const argument is a T const&&, which cannot bind to a T&& parameter. But it can bind to a copy parameter.
 So we have two options:
-1- We could add a new move constructor to recieve as parameter a Base const &&tmp, and inside the the Derived copy constructor member initialization should be "Base(move(other))".
-2- We have to remove the const from the Derived copy constructor, which should look something like this "Derived(Derived &other)". And then keep the same member initialization as in answer 1.
+1- We could add a new move constructor to recieve as parameter a "Base &&tmp", and inside the the Derived copy constructor member initialization should be "Base(move(other))".
+2- We have to remove the const from the Derived copy constructor, which should look something like this "Derived(Derived const &other)". And then keep the same member initialization as in answer 1.

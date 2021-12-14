@@ -1,0 +1,7 @@
+Base constructor
+Derived constructor
+String: Hello!
+Derived: hello...
+Base constructor
+Segmentation fault (core dumped)
+

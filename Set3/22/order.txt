@@ -3,10 +3,10 @@ explain.txt
 main.ih
 main.cc
 base.hh
-constructorBase.cc
-helloBase.cc
+base.cc
 derived.hh
-constructorDerived.cc
-helloDerived.cc
+derived.cc
 caller.hh
 caller.cc
+
+out.txt

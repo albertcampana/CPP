@@ -1,2 +1,4 @@
 Set: Set 3
-Authors: Albert Campaña, David Vives, Cynthia Snijder.
+Authors: Albert Campaña, David Vives
+Rater: FBB
+Note: We agreed with Frank that this set can be submitted as a group of two members.

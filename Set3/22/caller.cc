@@ -2,5 +2,8 @@
 
 void caller(Base &obj)
 {
-    obj.hello();
+    Base *base = &obj;
+    Derived *derived;
+    derived = static_cast<Derived *>(base);
+    derived->hello();
 }

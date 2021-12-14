@@ -1,7 +1,6 @@
-You can call Derived::hello by making the hello() function virtual.
-When you make a function virtual in a Base calss, it will remain virtual for all it's derived classes. So if you have a big herarchy, it's difficult to know which class is overriding it.
+In this question, we are asked to create a program that receives a Base class reference and calls for a Derived member.
 
-This is bad practice because it generates extra coupling between classes. The code gets less readable and harder to maintain.
+When a function is called using a pointer to an object, then the type of the pointer (and not the type of the object) determines which member functions are available and can be executed.
+To execute the Derived::hello(), we do a static_cast.
 
-In our example, it is also bad because we need the virtual function to be public, which makes the class interface inconsisten between all derived classes. It should be either protected or private.
-
+This is bad practice because if the base object pointer is not pointing to a Derived object, then this may produce unexpected results. This is what we have done in main.cc. The first call to caller() works perfectly because we are passing a Derived object. On the second call, we are passing a Base object and this causes a "core dumped" segmentation fault. (As seen on the out.txt file)

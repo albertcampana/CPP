@@ -1,5 +1,7 @@
-PUBLIC: When publicly inheriting from an existring Base class, all the access rights remains unaltered. Which means that all the members that were previously accessible, still remain the same. The designer will be able to use either public or protected members, but the users of the Derived objects will only be able to access public members and not protected ones.
+This question is related to access specifiers in C++ inheritance. We are asked to discuss the three different keywords (public, protected, and private).
 
-PROTECTED: When we use protected inheritance, all public and protected members from the base class are seen as protected from the derived class point of view. Which means that only Derived's designer will be able to access these members. Users of the Derived class won't be able to access any members from the Base class.
+PUBLIC Inheritance: makes public members of the base class public in the derived class, and the protected members of the base class remain protected in the derived class. Both the users and the designer can access all public and protected members.
 
-PRIVATE: It's members can only be accessed by members of the class itslef. A base class does not have access to a base class's private section. Which means that neither the Derived's designer nor users of a Derived object will have access to the members of the Base class.
+PROTECTED Inheritance: makes all public and protected members from the base class protected in the derived class. Any other code (outside the inheritance tree) is unable to access the base class's members. Users can now access both public and protected methods from the base class, but they are both seen as protected in all the inheritance tree. Designers can access all public and protected methods but are seen as protected.
+
+PRIVATE Inheritance: makes the public and protected members of the base class private in the derived class, so base class members can not be used elsewhere. The designer can access all methods seen as private. And the user won't be able to access any method.
