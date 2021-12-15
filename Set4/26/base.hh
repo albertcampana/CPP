@@ -10,4 +10,5 @@ class Base
         {
             vHello(out);
         }
+        virtual ~Base();
 };

@@ -1,6 +1,5 @@
 #include <iostream>
 #include "base.hh"
 #include "derived.hh"
-#include "derivedFactory.hh"
 
 using namespace std;
