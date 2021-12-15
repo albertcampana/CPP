@@ -89,9 +89,9 @@ void show(Msg msg)
         return;
     }
 
-    for (
-        auto [test, end, idx] = tuple{ beginMsg(), endMsg(), 0 };
-            test != end; ++test, ++idx)
+    Msg test = beginMsg();
+    Msg end = endMsg();
+    for (int idx = 0; test != end; ++test, ++idx)
     {
         if ((test & msg) != Msg::NONE)
             cout << name[idx] << ' ';
