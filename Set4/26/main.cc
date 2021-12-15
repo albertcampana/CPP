@@ -13,4 +13,6 @@ int main()
     {
         delete bp[idx];
     }
+    
+    delete bp;
 }

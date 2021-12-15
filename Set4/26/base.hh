@@ -6,9 +6,10 @@ class Base
             out << "Hello from Base\n";
         }
     public:
+        virtual ~Base()
+        {}
         void hello(std::ostream &out)
         {
             vHello(out);
         }
-        virtual ~Base();
 };
