@@ -1,0 +1,9 @@
+In this exercise, we are asked to implement escalation.
+
+The enum class Msg and its operations have been taken from exercise 6.
+
+It is not possible to extend an enum in derived classes. To solve this we created a new Base class "base.hh" containing the enum Msg.
+Then we privately inherited this class from both the Handler and Processor to be able to access the Msg enum.
+
+To be sure that the enum is only available to the members of that class we tried to call "show(Msg::NONE | Msg::EMERG);" from both classes constructor and it works. 
+If we try to call "show(Handler::Msg::NONE);" from outside the class, it does not work.

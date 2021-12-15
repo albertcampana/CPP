@@ -1,2 +1,2 @@
 Set: Set 4
-Authors: Albert Campaña, David Vives, Cynthia Snijder.
+Authors: Albert Campaña, David Vives.

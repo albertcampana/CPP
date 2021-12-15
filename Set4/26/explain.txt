@@ -1,0 +1,4 @@
+In this exercise we are required to define classes having Vtables whose objects can safely be destroyed. 
+
+We had to add a virtual destructor to the Base class to delete all the pointers, because we have pointers to Base objects, but they contain Derived objects.
+Making it virtual, updates the vtable of the object so when you call delete, the correct destructor is executed.

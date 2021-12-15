@@ -15,19 +15,19 @@ namespace
     };
 }
 
-void show(Msg msg)
+void show(Base::Msg msg)
 {
-    if (msg == Msg::NONE)
+    if (msg == Base::Msg::NONE)
     {
         cout << "NONE\n";
         return;
     }
 
-    for (
-        auto [test, end, idx] = tuple{ beginMsg(), endMsg(), 0 };
-            test != end; ++test, ++idx)
+    Base::Msg test = beginMsg();
+    Base::Msg end = endMsg();
+    for (int idx = 0; test != end; ++test, ++idx)
     {
-        if ((test & msg) != Msg::NONE)
+        if ((test & msg) != Base::Msg::NONE)
             cout << name[idx] << ' ';
     }
     
