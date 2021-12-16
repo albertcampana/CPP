@@ -1,0 +1,42 @@
+In this exercise, we are meant to learn what happens when using multiple inheritance.
+
+//CLASS HIERARCHY//
+
+  Basic   Basic
+    |       |
+    |       |
+ Deriv1  Deriv2
+    |       |
+     |     |
+      |   | 
+       | |   
+      Multi
+
+The error we got is the following:
+"error: ‘Basic’ is an ambiguous base of ‘Multi’"
+The issue is that class Multi inherits from both Deriv1 and Deriv2. But both Deriv1 and Deriv2 inherit from Basic. That will result in two copies of the class Basic included in the vtable.
+
+In our case, Multi contains two instances of Basic: the Basic obtained by casting up through Deriv1 and the Basic obtained by casting up through Deriv2. By doing two static_casts, we will only get one of those instances of Basic, depending on if we add Deriv1 inside the inner static_cast or Deriv2.
+Like this:
+    cout << static_cast<Basic *>(static_cast<Deriv1 *>(this)) << '\n';
+or this:
+    cout << static_cast<Basic *>(static_cast<Deriv2 *>(this)) << '\n';
+will make the error go away.
+
+Leaving the statement as is, if we want the class Multi to be one Basic instance, then we need virtual inheritance:
+"class Deriv1: public virtual Basic" means, that any class inherited from Deriv1 (Multi) is now responsible for creating Basic by itself since Deriv1 isn't going to do it automatically.
+By adding this and "class Deriv2: public virtual Basic", now the compiler compiles the program without errors.
+
+Executing main, we realize that just the Basic default constructor is called. This is because as explained above when using virtual inheritance, class Multi is in charge of calling the Basic constructor. Then it won't consider the parameters that are sent to either Deriv1 or Deriv2, so the Basic constructor specified in Multi will be called, as none is specified the default one is being used.
+
+Even when we write a constructor for Deriv1 asking to construct Basic using an int:
+Deriv1::Deriv1()
+:
+    Basic(7)
+{}
+If we construct a Multi object the 'Basic(7)' statement is ignored.
+
+For the Basic(int value) constructor to be called, we should modify the Multi constructor so it is called explicitly. As the question asks for the default one, no changes are needed.
+
+
+
