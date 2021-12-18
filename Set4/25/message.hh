@@ -3,13 +3,7 @@ class Message
     Base *d_base;
     
     public:
-        Message(Base &base)
-        {
-            d_base = &base;
-        }
+        Message(Base &base);
 
-        void show()
-        {
-            d_base->hello(std::cout);
-        }
+        void show();
 };
