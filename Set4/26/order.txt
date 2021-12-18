@@ -5,4 +5,3 @@ derived.hh
 derivedFactory.hh
 main.ih
 main.cc
-
