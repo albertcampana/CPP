@@ -1,6 +1,6 @@
 #include "main.ih"
 
-Message::void show()
+void Message::show()
 {
     d_base->hello(std::cout);
 }

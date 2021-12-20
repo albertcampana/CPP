@@ -1,6 +1,6 @@
 #include "main.ih"
 
-Base derivedFactory::**derivedFactory(size_t size)
+Base **derivedFactory(size_t size)
 {
     Base **array = new Base *[size];  //Create an array of Base pointers
                                       //Loop all the elements

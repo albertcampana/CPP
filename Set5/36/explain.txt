@@ -1,0 +1,9 @@
+In this exercise, we work on understanding how a vector works looking at how its size and capacity work.
+
+First, we read unique words from file input.txt using an ifstream and a set. Then we create a vector and assign the content of the set. At this point, we print the vector size and capacity and we can see that they are the same. When we add a new word using push_back("word") the size is incremented by one and the new capacity two times the old one. Then using vector<string>(vectorString).swap(vectorString); we shed the excess and once again size and capacity are the same. You can see all this at the file out1.txt.
+
+Now the exercise asks to define a class containing a vector<string> data member. We've defined a constructor with a string parameter that creates the initial vector reading the file with the name given as a parameter and then adds a new word. We've defined a size() and capacity() members to print the vector size and capacity of the vector. And we can see in the out2.txt file that we have a size that is nearly half of the capacity.
+
+In order to shed the excess capacity only using members that are standard available/expected of classes, we have defined the copy constructor that creates the vector assigning the other vector data. As we know from the first part of the exercise the assigned operator creates a vector with size = capacity. We've also defined a swap member that swaps the vector of the two objects. Now we are able to shed the excess using VectorString(vectorString).swap(vectorString);
+
+shrink_to_fit shouldn't be used because if reallocation occurs, all iterators and all references to the elements are invalidated, which may cause problems. 

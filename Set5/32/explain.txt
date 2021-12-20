@@ -1,0 +1,4 @@
+In this question we are asked to create a program that prints a sorted list of all the different words appearing in the input.
+
+We used a set to solve this exercise. It automatically sorts the words, but it does not differentiate between the new ones or the ones that already appeared.
+To solve that issue we put all the words inside a map and print the map.

@@ -1,8 +1,16 @@
 explain.txt
 
 base.hh
+basehello.cc
+basevhello.cc
+
 derived.hh
+derivedcnst.cc
+derivedvhello.cc
+
 message.hh
+messagecnst.cc
+messageshow.cc
 
 main.ih
 main.cc

@@ -1,1 +1,3 @@
 We agreed with Frank that this set can be submitted as a group of two members, since one of our group members has just dropped the course.
+
+We had feedback on previous exercise and realised we had major errors on this code. That is why we are re-submitting it.

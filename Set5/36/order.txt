@@ -1,0 +1,16 @@
+explain.txt
+
+out1.txt
+out2.txt
+
+main.cc
+main.ih
+
+vectorString/vectorString.hh
+vectorString/vectorString.ih
+
+vectorString/ctor1.cc
+vectorString/ctor2.cc
+vectorString/swap.cc
+
+input.txt

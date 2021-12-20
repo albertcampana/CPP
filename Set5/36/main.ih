@@ -1,0 +1,7 @@
+#include "vectorString/vectorString.hh"
+#include <iostream>
+#include <set>
+#include <fstream>
+#include <vector>
+
+using namespace std;

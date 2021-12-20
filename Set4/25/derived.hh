@@ -6,10 +6,6 @@ class Derived : public Base
         Derived(std::string text);
 
     private:       
-        void vHello(std::ostream &out) override
-        {
-            out << d_text << '\n';
-        } 
-
+        void vHello(std::ostream &out) override;
     
 };

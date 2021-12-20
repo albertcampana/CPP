@@ -1,5 +1,5 @@
 #include "main.ih"
-Derived::void vHello(std::ostream &out) override
+void Derived::vHello(std::ostream &out)
 {
     out << d_text << '\n';
 }

@@ -1,0 +1,5 @@
+In this exercise we are required to print the word and how many times has this word appeared in the input.
+
+To solve this exercise we decide to use a map, with the key as a string and the value as an int. We increment this int for every word that appears in the input.
+
+The code is so simple because in a map every new key is auto-initialized to a default value. In our int case, it is initialized to 0.

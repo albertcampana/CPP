@@ -2,5 +2,7 @@
  
  This program defines two Vtables, one for Base and one for Derived and two Vpointer one for base and one for derived objects. 
  
- The message object created using the derived object uses the derived Vtable even though it has a base poiter. This is possible because of polymorphism.
+JB: Q. If there were two Base objects and a Derived object, how many vpointers would there be?
+There would be one only Vtable for both the Base objects with two Vpointers, one for each instance of Base. And another Vtable and one Vpointer for the Derived object. (one Vtable for each class and one Vpointer for each single object)
  
+ The message object created using the derived object uses the derived Vtable even though it has a base poiter. This is possible because of polymorphism.
