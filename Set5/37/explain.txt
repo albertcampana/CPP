@@ -1,5 +1,7 @@
-Because NoEntry does not meet the CopyInsertable requirements of push_back.
+In this exercice we are provided with a class NoEntry that has private constructors and a friend class PrivilegedOne with a vector of NoEntry objects. We are asked why we can't push_back new NoEntry objects in this vector.
 
-One way of working around this limitation is not storing NoEntry objects in the vector, but pointers or std::unique_ptr<NoEntry> items. The latter requires only MoveConstructible and MoveAssignable, but not CopyInsertable.
+This is because NoEntry does not meet the copy and insert requirements of push_back, which means, std::vector::push_back needs at least a public copy constructor for the items stored. push_back() will need to copy items into the internal storage array, and copy again when it comes to reallocating storage.
 
-If all constructors of your class are private, then only member functions of your class (including static members) or friends of the class can create instances of it. To push or move instances of that class into a std::vector, then that vector class will need to be declared as a friend. std::push_back(), among other things, uses a constructor of your class to add an element, but may call other functions to do that job
+We thought that one way of solving this is not storing NoEntry objects in the vector, but pointers.
+
+The final solution we have implemented consists on a Wrapper class PrivilegedTwo that is a friend of NoEntry. This class has a member content that is a NoEntry object. And we've changed the vector declaration so now it is a vector of PrivilegedTwo objects. As PrivilegedTwo has its constructors public and it is a friend class of NoEntry the vector is able to create it.

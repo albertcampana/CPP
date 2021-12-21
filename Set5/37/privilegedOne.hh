@@ -8,7 +8,7 @@
 
 class PrivilegedOne
 {
-    std::vector<NoEntry *> d_noEntry;
+    std::vector<PrivilegedTwo> d_noEntry;
 
     public:
         PrivilegedOne(std::string const &fname);

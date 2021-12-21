@@ -12,7 +12,9 @@ PrivilegedOne::PrivilegedOne(string const &fname)
         if (next.name().empty())
             break;
 
-        d_noEntry.push_back(&next);          // oops...
+        PrivilegedTwo newObject = PrivilegedTwo(next);
+
+        d_noEntry.push_back(newObject);          // oops...
     }
 }
 
