@@ -4,7 +4,7 @@
 #include <iosfwd>
 #include <vector>
 
-#include "noEntry.hh"
+#include "privilegedTwo.hh"
 
 class PrivilegedOne
 {
