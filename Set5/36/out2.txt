@@ -1,6 +1,6 @@
 // OUT 2 //
 
+Size: 11
 Capacity: 20
 Size: 11
 Capacity: 11
-Size: 11

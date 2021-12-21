@@ -1,4 +1,6 @@
-In this question we are asked to create a program that prints a sorted list of all the different words appearing in the input.
+In this question, we are asked to create a program that prints a sorted list of all the different words appearing in the input.
 
-We used a set to solve this exercise. It automatically sorts the words, but it does not differentiate between the new ones or the ones that already appeared.
-To solve that issue we put all the words inside a map and print the map.
+We used a set to solve this exercise as it implements a sorted collection of unique values, so when we add a word if it is already in the set it is not inserted and if it wasn't there it is inserted in the right place. So when we print it we can see the words in order.
+
+Using the input: a a a b c abc acb acb ab ac 
+We get the output on file out1.txt

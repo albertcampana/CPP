@@ -1,0 +1,7 @@
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include "noEntry.hh"
+#include "privilegedOne.hh"
+
+using namespace std;

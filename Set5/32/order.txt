@@ -2,5 +2,5 @@ explain.txt
 
 main.ih
 main.cc
-text.hh
-text.cc
+
+out1.txt

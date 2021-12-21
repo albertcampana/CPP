@@ -1,0 +1,9 @@
+// OUT 1 //
+
+a 3
+ab 1
+abc 1
+ac 1
+acb 2
+b 1
+c 1

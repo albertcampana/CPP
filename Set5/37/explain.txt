@@ -1,0 +1,5 @@
+Because NoEntry does not meet the CopyInsertable requirements of push_back.
+
+One way of working around this limitation is not storing NoEntry objects in the vector, but pointers or std::unique_ptr<NoEntry> items. The latter requires only MoveConstructible and MoveAssignable, but not CopyInsertable.
+
+If all constructors of your class are private, then only member functions of your class (including static members) or friends of the class can create instances of it. To push or move instances of that class into a std::vector, then that vector class will need to be declared as a friend. std::push_back(), among other things, uses a constructor of your class to add an element, but may call other functions to do that job
