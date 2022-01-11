@@ -1,0 +1,1 @@
+Change the organization of Strings class so that strings are reached via pointers. Then, modify it  so that copy- and move-constructors and assignment operators as well as a destructor are available without us having to implement or declare them.
