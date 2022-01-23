@@ -6,4 +6,5 @@ Now the exercise asks to define a class containing a vector<string> data member.
 
 In order to shed the excess capacity only using members that are standard available/expected of classes, we have defined the copy constructor that creates the vector assigning the other vector data. As we know from the first part of the exercise the assigned operator creates a vector with size = capacity. We've also defined a swap member that swaps the vector of the two objects. Now we are able to shed the excess using VectorString(vectorString).swap(vectorString);
 
-shrink_to_fit shouldn't be used because if reallocation occurs, all iterators and all references to the elements are invalidated, which may cause problems. 
+shrink_to_fit is not guaranteed to work. It depends on the implementation whether to fulfill or ignore the
+request.

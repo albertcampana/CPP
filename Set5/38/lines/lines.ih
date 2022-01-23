@@ -1,0 +1,8 @@
+#include "lines.h"
+
+using namespace std;
+
+                // map that saves the vector of each Lines object
+extern map<Lines const *, vector<string>> LinesMap;
+
+

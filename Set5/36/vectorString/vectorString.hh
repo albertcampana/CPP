@@ -7,7 +7,7 @@
 
 class VectorString
 {
-    std::vector<std::string> vector_d;
+    std::vector<std::string> uniqueWordsVector;
     
     public:
         VectorString(std::string filename);
@@ -22,12 +22,12 @@ class VectorString
 
 inline std::size_t VectorString::size() const
 {
-    return vector_d.size();
+    return uniqueWordsVector.size();
 }
 
 inline std::size_t VectorString::capacity() const
 {
-    return vector_d.capacity();
+    return uniqueWordsVector.capacity();
 }
 
 

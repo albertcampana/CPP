@@ -2,8 +2,7 @@
 
 VectorString::VectorString(string filename)
 {
-    ifstream file;
-    file.open(filename);
+    ifstream file(filename);
 
     string word;
     set<string> uniqueWords;
@@ -12,8 +11,7 @@ VectorString::VectorString(string filename)
         uniqueWords.insert(word);      // Insert each word into a set
     
                                        // Construct a vector with set elems
-    vector_d.assign(uniqueWords.begin(), uniqueWords.end());
+    uniqueWordsVector.assign(uniqueWords.begin(), uniqueWords.end());
     
-    vector_d.push_back("Word");        // Add one additional word to the vector
+    uniqueWordsVector.push_back("Word");        // Add one additional word to the vector
 }
-

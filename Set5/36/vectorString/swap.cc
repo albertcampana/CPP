@@ -2,5 +2,5 @@
 
 void VectorString::swap(VectorString &other)
 {
-    vector_d.swap(other.vector_d);     // Swap vectors
+    uniqueWordsVector.swap(other.uniqueWordsVector);     // Swap vectors
 }
