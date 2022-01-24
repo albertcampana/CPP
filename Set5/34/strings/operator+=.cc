@@ -1,4 +1,5 @@
 #include "strings.ih"
-void Strings::operator+=(string str){
+void Strings::operator+=(string str)
+{
     push_back(str);
 }

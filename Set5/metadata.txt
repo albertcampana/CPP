@@ -1,2 +1,3 @@
 Set: Set 5
-Authors: Albert Campaña, David Vives, .
+Authors: Albert Campaña, David Vives, Julia Walczyńska.
+Rater: FBB
