@@ -1,1 +1,0 @@
-Change the Strings class so that copy- and move-constructors and assignment operators as well as a destructor are available without us having to implement or declare them. 
