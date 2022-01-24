@@ -1,0 +1,10 @@
+In this exercise we are required to define a class whose data are elsewhere.
+
+We have the class Lines that should read lines of text from an istream in its constructor. All the instances must be able to retrieve line strings for that instance and other instances.
+
+We use an extern std::map with Lines pointers as key_type, and vector<string> objects as value_types, and we declare it at lines.ih so it is only avilable for instances of Lines class.
+At the Lines constructor, each line from the istream is put to a local vector until an empty newline, and inserted to the map associated with `this' pointer.
+
+To access the n-th Lines obj's contents, we use std::next to iterate n times starting from map::begin() and retrieve the corresponding vector.
+
+At destruction, the vector associated to `this' is removed.

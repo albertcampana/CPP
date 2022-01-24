@@ -8,7 +8,7 @@ int main()
     while (cin >> word)                // Read all word from standard input
         stringSet.insert(word);        // Insert each word into the set
 
-    set<string>::iterator iterator;    // Loop all the elements in the set
-    for (iterator = stringSet.begin(); iterator != stringSet.end(); ++iterator)
-        cout << *iterator << "\n";     // Print each element
+    for(auto iterator : stringSet) {   // Loop all the elements in the set
+        cout << iterator << '\n';      // Print each element
+    }       
 }

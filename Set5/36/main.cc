@@ -2,17 +2,17 @@
 
 int main()
 {
-    string filename = "input.txt";     // Construct VectorString object
-    VectorString vectorString = VectorString(filename);
+                                       // Construct VectorString object
+    VectorString vectorString = VectorString("input.txt");
     
                                        // Print size and capacity
-    cout << "Size: " << vectorString.size() << endl;
-    cout << "Capacity: " << vectorString.capacity() << endl;
+    cout << "Size: " << vectorString.size() << '\n'
+        << "Capacity: " << vectorString.capacity() << '\n';
     
                                        // Swap object with its copy
     VectorString(vectorString).swap(vectorString);
     
                                        // Print size and capacity
-    cout << "Size: " << vectorString.size() << endl;
-    cout << "Capacity: " << vectorString.capacity() << endl;    
+    cout << "Size: " << vectorString.size() << '\n'
+        << "Capacity: " << vectorString.capacity() << '\n';    
 }
