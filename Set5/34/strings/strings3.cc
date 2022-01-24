@@ -1,10 +1,9 @@
 #include "strings.ih"
 
-Strings::Strings(char **environLike)
-{
-    for (char **env = environLike; *env != 0; env++)
+Strings::Strings(char **environ) : vector<string>()
     {
-        char *env1 = *env;
-        d_str.push_back(env1);  
+        for (char **env = environ; *env != 0; ++env)
+        {
+            push_back(*env);
+        }
     }
-}

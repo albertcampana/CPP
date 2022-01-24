@@ -1,0 +1,5 @@
+In this exercise we were required to change the Strings class so that:
+copy- and move-constructors, assignment operators and destructor are available without 
+us having to implement or declare them.
+
+We did it by inheriting from vector, as opposed to the first implementationn, where we had vector<string> d_str member and multiple unnecessary inline functions wrapping those already available in vector. 
