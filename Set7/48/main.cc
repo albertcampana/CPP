@@ -34,13 +34,11 @@ void sieve ()
     }
 
     end_time = system_clock::now();
-
-    terminate();
 }
 
-void printDots(const thread & thr)
+void printDots()
 {
-    while(thr.joinable())
+    while(true)
     {
         cerr << '.';
         this_thread::sleep_for(seconds(1));
@@ -70,10 +68,11 @@ int main()
 {
     cin >> numberOfPrimes;
     
-    thread thr(sieve);
+    thread thrPrint(printDots);
 
-    printDots(thr);
-    thr.join();
+    sieve();
+
+    thrPrint.detach();
 
     printResults();
 }
