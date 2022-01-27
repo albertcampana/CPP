@@ -1,3 +1,1 @@
-Exercise 47:
-
-Define copyFile functions either expecting two filenames using fundamentally different ways to copy source to dest.
+Exercise 48:
