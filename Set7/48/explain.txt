@@ -1,3 +1,3 @@
-Exercise 47:
+Exercise 48:
 
-Define copyFile functions either expecting two filenames using fundamentally different ways to copy source to dest.
+Print dots every second while calculating prime numbers. We've created a thread that prints a dot every second and then on the main program we calculate the first n prime numbers and once it is calculated we detach the thread and print the results.
