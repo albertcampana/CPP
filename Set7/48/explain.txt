@@ -1,3 +1,1 @@
-Exercise 48:
-
-Print dots every second while calculating prime numbers. We've created a thread that prints a dot every second and then on the main program we calculate the first n prime numbers and once it is calculated we detach the thread and print the results.
+Exercise 49:
