@@ -11,4 +11,5 @@ int main()
     cpy.copyFile(2, "main.cc", "main2.cc");
     cpy.copyFile(3, "main.cc", "main3.cc");
     cpy.copyFile(4, "main.cc", "main4.cc");
+    cpy.copyFile(5, "main.cc", "main5.cc");
 }

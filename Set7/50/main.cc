@@ -1,33 +1,68 @@
 #include <iostream>
 #include <chrono>
+#include <string>
 #include <iomanip>
 
 using namespace std;
 using namespace chrono;
 
-int main()
+
+void usage()
 {
-    int input;
-    cin >> input;
+     cout << "Usage: a.out [timedelta]\n"
+             "timedelta: integer, followed by literal"
+             " 's'|'m'|'h' (second|minute|hour)\n"; 
+}
 
-    auto actualTime = system_clock::now();
-    auto printTime = system_clock::to_time_t(actualTime);
-                                       // print local time
-    cout << "local: " 
-         <<  put_time(localtime(&printTime), "%Y-%m-%d %X") << '\n';
-                                       // print UTC time
-    cout << "UTC:   " 
-         <<  put_time(gmtime(&printTime), "%Y-%m-%d %X") << '\n';
 
-    actualTime += seconds(input);      // add time
-    actualTime += minutes(input);
-    actualTime += hours(input);
+int main(int argc, char **argv)
+{
+     if (argc != 2)
+     {
+          usage();
+          return 1;
+     }
 
-    printTime = system_clock::to_time_t(actualTime);
-                                       // print local added time
-    cout << "Added time\n" << "local: " 
-         <<  put_time(localtime(&printTime), "%Y-%m-%d %X") << '\n';
-                                       // print UTC added time
-    cout << "UTC:   " 
-         <<  put_time(gmtime(&printTime), "%Y-%m-%d %X") << '\n';
+     string shift_str = argv[1];
+     int shift_int = stoi(shift_str);
+
+     seconds shift;
+     if (shift_str.ends_with('s'))
+          shift = seconds(shift_int);
+     else if (shift_str.ends_with('m'))
+          shift = minutes(shift_int);
+     else if (shift_str.ends_with('h'))
+          shift = hours(shift_int);
+     else
+     {
+          usage();
+          return 1;
+     }
+
+     auto actualTime = system_clock::now();
+     auto printTime = system_clock::to_time_t(actualTime);
+                                        // print local time
+     cout << "local: " 
+          <<  put_time(localtime(&printTime), "%Y-%m-%d %X") << '\n';
+                                        // print UTC time
+     cout << "UTC:   " 
+          <<  put_time(gmtime(&printTime), "%Y-%m-%d %X") << '\n';
+
+     auto addTime = system_clock::to_time_t(actualTime + shift); // add time
+     auto subTime = system_clock::to_time_t(actualTime - shift);
+    
+
+                                        // print local added time
+     cout << "Added time\n" << "local: " 
+          <<  put_time(localtime(&addTime), "%Y-%m-%d %X") << '\n';
+                                        // print UTC added time
+     cout << "UTC:   " 
+          <<  put_time(gmtime(&addTime), "%Y-%m-%d %X") << '\n';
+
+
+     cout << "Subtracted time\n" << "local: "
+          << put_time(localtime(&subTime), "%Y-%m-%d %X") << '\n';
+     // print UTC subtracted time
+     cout << "UTC:   "
+          << put_time(gmtime(&subTime), "%Y-%m-%d %X") << '\n';
 }
