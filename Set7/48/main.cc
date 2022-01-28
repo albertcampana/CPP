@@ -19,11 +19,11 @@ void sieve ()
 
     size_t next = 3;                   // Initialize next possible prime
 
-    while (sieve_vector.size() < numberOfPrimes)
+    while (sieve_vector.size() != numberOfPrimes)
     {                                  // Sieve algorithm
         bool notPrime = false;
 
-        for (size_t idx = 0; idx < sieve_vector.size() && !notPrime; ++idx)
+        for (size_t idx = 0; idx != sieve_vector.size() && !notPrime; ++idx)
             if (next % sieve_vector[idx] == 0) 
                 notPrime = true;        // not prime
         
@@ -48,7 +48,7 @@ void printDots()
 
 void printResults()
 {                                      // print prime numbers
-    for (size_t idx = 0; idx < sieve_vector.size(); ++idx)
+    for (size_t idx = 0; idx != sieve_vector.size(); ++idx)
         cout << sieve_vector[idx] << ' ';
                                        // convert time to required format
     auto start_timet = system_clock::to_time_t(start_time);
