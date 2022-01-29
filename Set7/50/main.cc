@@ -39,8 +39,8 @@ int main(int argc, char **argv)
           return 1;
      }
 
-     auto actualTime = system_clock::now();
-     auto printTime = system_clock::to_time_t(actualTime);
+     time_point actualTime = system_clock::now();
+     time_t printTime = system_clock::to_time_t(actualTime);
                                         // print local time
      cout << "local: " 
           <<  put_time(localtime(&printTime), "%Y-%m-%d %X") << '\n';
@@ -48,8 +48,8 @@ int main(int argc, char **argv)
      cout << "UTC:   " 
           <<  put_time(gmtime(&printTime), "%Y-%m-%d %X") << '\n';
 
-     auto addTime = system_clock::to_time_t(actualTime + shift); // add time
-     auto subTime = system_clock::to_time_t(actualTime - shift);
+     time_t addTime = system_clock::to_time_t(actualTime + shift); // add time
+     time_t subTime = system_clock::to_time_t(actualTime - shift);
     
 
                                         // print local added time
