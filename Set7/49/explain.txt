@@ -1,1 +1,5 @@
-Exercise 50:
+Exercise 49:
+
+We are required to convert time specification to a fine-grained time specification and vice-versa. 
+To do this we make use of the duration_cast implemented in the chrono library. And then for the seconds to minutes, we make use of the duration function. 
+Finally, we print both the hours to minutes and the seconds to minutes.
