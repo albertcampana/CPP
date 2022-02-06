@@ -1,37 +1,40 @@
 #include "storage/storage.h"
+#include "consumer/consumer.h"
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <chrono>
 #include <thread>
+
+
 using namespace std;
 
 
-void consumer(string const &file)
+void usage()
 {
-    Storage *storage = Storage::instance();
-    ofstream out{ file };
-
-    while (not storage->isFinished())
-    {
-        while (storage->empty())
-            this_thread::sleep_for(chrono::seconds(1));
-        
-        out << storage->pop() << '\n';
-    }
+    cout << "Usage: a.out [file]\n"
+            "[file] -- name of the file to write the lines to\n";
 }
 
 
 int main(int argc, char **argv)
 {
-    Storage *storage = Storage::instance();
-    thread consum = thread(consumer, "out.txt");
+    if (argc != 2)
+    {
+        usage();
+        return 1;
+    }
+
+    Storage storage;
+    Consumer consumer(argv[1]);
+                        // use main storage reference
+    thread consum = thread(consumer, ref(storage));
 
     string line;
     while (getline(cin, line))
-        storage->push(line);
+        storage.push(line);
 
-    storage->finish();
+    storage.finish();   // signal finish
     consum.join();
 }
