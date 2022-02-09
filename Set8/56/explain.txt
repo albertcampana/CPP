@@ -1,0 +1,6 @@
+Exercise 56:
+
+The purpose of this exercise is to learn to design and implement a Semaphore class.
+The constructor simply initializes d_nAvailable to 0 or 1.
+For notify and notify_all the semaphore gets the look, increments d_nAvailable and calls notify or notify_all over the condition_variable.
+The wait method executes a wait over the condition_variable so when notify or notify_all is executed the semaphore stop waiting.

@@ -1,0 +1,9 @@
+Exercise 57:
+
+The purpose of this exercise is to become familiar with packaged_task. 
+
+Following the statement, we have defined two 2-dimensional matrices and filled them with random numbers.
+
+Then we've defined a 2-dimensional matrice of future<double>. Then we create a packaged_task for each inner_product we need. And we create a new thread for each, moving the packaged_task cause it is a temporal variable and giving the two necessary arguments.
+
+Then we print the matrice as asked. Because it is a matrice of futures we can use get and if the responsible thread has not ended it will block till the value is ready.

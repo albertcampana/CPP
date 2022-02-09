@@ -1,0 +1,3 @@
+Set: Set 8
+
+Authors: Albert Campaña, David Vives, Shiladitya Bose, Julia Walczyńska
